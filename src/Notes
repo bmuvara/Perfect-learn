@@ -1,0 +1,234 @@
+Front End(Using Angular)
+
+Installation of the App:
+
+1st step: npm install -g @angular/cli@latest
+
+2nd Step:  create a stand alone :
+
+C:\Training\PerfectLearn\PerfectLearn>ng new PerfectLearn --no-standalone
+
+3rd STep: Install bootstap,nodemon:
+
+npm install bootstrap 
+npm install nodemon
+
+4th Step: Create the Components:
+
+login : C:\Training\PerfectLearn\PerfectLearn>ng generate component component/login 
+
+My ROUTEES
+
+const routes: Routes = [
+  {path:'home', component:HomeComponent },
+  {path:'login', component:LoginComponent },
+  {path:'admin', component:AddCourseComponent },//Admin
+  {path:'studentHome/viewCourseByStudent', component:StudentHomeComponent},//student
+  {path:'**',redirectTo:'home',pathMatch:'full'}
+];
+
+
+
+
+
+const routes: Routes = [
+  {path:'home', component:HomeComponent },
+  {path:'**',redirectTo:'home',pathMatch:'full'},
+  {path:'login', component:LoginComponent },
+  {
+    path:'', component:AdminLayoutComponent,
+    children:[ {path:'admin', component:AddCourseComponent },//Admin
+      {path:'studentHome/viewCourseByStudent', component:StudentHomeComponent},//student
+     ]
+    },
+ 
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// JWT secret key
+/* const SECRET_KEY = 'your_jwt_secret_key';
+
+// Login endpoint
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+ /*  const user = users.find(u => u.username === username); */
+
+ const user = User.findOne({username});
+  
+  if (!user || !bcrypt.compareSync(password, user.password)) {
+    return res.status(401).send('Invalid credentials');
+  }
+
+
+
+
+  // Generate JWT token
+  const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY, { expiresIn: '1h' });
+  res.send({ token });
+});
+
+// Protected route
+app.get('/dashboard', (req, res) => {
+  const token = req.headers['authorization'];
+
+  if (!token) {
+    return res.status(403).send('No token provided');
+  }
+
+  jwt.verify(token, SECRET_KEY, (err, decoded) => {
+    if (err) {
+      return res.status(500).send('Failed to authenticate token');
+    }
+ *
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="col-md-6">
+      <div class="form-group">
+        <label for="username">Enter username:</label>
+        <input type="username" id='username'name="username" class="form-control" [(ngModel)]="userCriteria.username" required>
+      
+      </div>
+  </div>
+
+
+
+
+
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="coursename">Course Name</label>
+  <input type="text" id="coursename" name="coursename" class="form-control" [(ngModel)]="courseDetails.courseName" >
+<div *ngIf =  "addForm.controls['courseName']?.invalid && (addForm.controls['courseName']?.touched || addForm.controls['courseName']?.dirty)" class="alert alert-danger">
+
+
+Course name is required
+
+</div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="form-group">
+    <label for="coursename">Course Name</label>
+    <input type="text" id="coursename" name="coursename" class="form-control" [(ngModel)]="courseDetails.courseName"   required
+    #courseNameCtrl="ngModel"  <!-- Template variable to track this input's validation -->
+  
+  />
+  <div *ngIf="courseNameCtrl.invalid && (courseNameCtrl.touched || courseNameCtrl.dirty)" class="alert alert-danger">
+    Course name is required
+  </div>
+    </div>
+
+
+
+    addCourse(){
+      this.authServices.addCourse(this.courseDetails.courseName).subscribe({
+      next:response =>{
+        console.log(this.courseDetails.courseName)
+        console.log('courseName received:', response.courseName);
+        /* 
+        this.route.navigate(['/admin']);
+     */
+      }})
+      
+    }
+
+
+
+    
+
+FROM --platform=$BUILDPLATFORM node:18.13.0-bullseye-slim as builder
+
+RUN mkdir /project
+WORKDIR /project
+
+RUN npm install -g @angular/cli@13
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+CMD ["ng", "serve", "--host", "0.0.0.0"]
+
+FROM builder as dev-envs
+
+# Install git and other required packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git
+
+# Create user vscode and add it to the docker group
+RUN groupadd docker && \
+    useradd -s /bin/bash -m vscode && \
+    usermod -aG docker vscode
+
+# Install Docker tools (cli, buildx, compose)
+COPY --from=gloursdocker/docker / /
+
+CMD ["ng", "serve", "--host", "0.0.0.0"]
+
+
+# Stage 1: Build the Angular application
+FROM node:18.20-bullseye-slim AS builder
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build -- --configuration production
+
+# Stage 2: Serve the Angular application with Nginx
+FROM nginx:alpine
+
+# Remove the default Nginx index.html
+RUN rm /usr/share/nginx/html/index.html
+
+# Copy built application files to Nginx's web directory
+COPY --from=builder /usr/src/app/dist/perfect-learn /usr/share/nginx/html
+
+# Adjust permissions
+RUN chmod -R 755 /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

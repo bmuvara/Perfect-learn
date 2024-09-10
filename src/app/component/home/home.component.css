@@ -1,0 +1,17 @@
+/* Example of custom styles */
+.container {
+    background-image: url('../../../assets/images/image1.PNG');  
+    background-color: #cccccc;
+     background-size: cover;  /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 1800px; /* Specify the container size */
+    height: 1000px; /* Specify the container size */
+  
+   } 
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+    background-color: #cccccc;
+  }
+

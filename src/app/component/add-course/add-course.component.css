@@ -1,0 +1,11 @@
+.images {
+    background-image: url('../../../assets/images/image1.PNG');  
+    background-color: #cccccc;
+     background-size: cover;  /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 500px; /* Specify the container size */
+    height: 300px; /* Specify the container size */
+    display: inline-block;
+    vertical-align: middle;
+  
+   } 

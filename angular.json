@@ -30,16 +30,20 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
+            "assets": [  "src/images",
+                          "src/favicon.ico", 
               {
                 "glob": "**/*",
                 "input": "public"
+              
               }
             ],
-            "styles": [
+            "styles": [ 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+             
             ],
-            "scripts": [],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -72,6 +76,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "host": "0.0.0.0",
+              "allowedHosts": ["all"]
+            },
+          
           "configurations": {
             "production": {
               "buildTarget": "PerfectLearn:build:production"
@@ -107,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,70 @@
+<div class="container">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Perferct Learning</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/FacultyDetails']" routerLinkActive="active">FacultyDetails</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/studentDetails']" routerLinkActive="active">STUDENTDETAILS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/courseDetails" routerLinkActive="active">COURSE DETAILS</a>
+      </li>
+      <li class="nav-item">
+
+        <a class="nav-link"  routerLink="/addCourses" routerLinkActive="active" >ADD COURSE</a>
+      </li>
+      <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/changepassword']" routerLinkActive="active"> CHANGE PASSWORD</a>
+
+      </li>
+      <li class="nav-item" >
+        
+       <a class="nav-link" [routerLink]="['/logout']" routerLinkActive="active"> Log Out</a>
+
+      </li>
+
+    <li class ='nav-item'  >
+          
+              <input type="text"   class="form-control" placeholder="Search">
+       
+         
+    </li>
+
+    </ul>
+
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>SrNO</th>
+                <th>courseName</th>
+                <th>request</th>
+             </tr>
+            </thead>
+            <tbody>
+            
+                <tr *ngFor="let courseDetail of Courses">
+                    <td>{{courseDetail.SrNO}}</td>
+              <td>{{courseDetail.courseName}}</td>                
+                    <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

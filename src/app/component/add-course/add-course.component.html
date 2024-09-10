@@ -1,0 +1,103 @@
+  <div class="container">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Perferct Learning</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/FacultyDetails']" routerLinkActive="active">FacultyDetails</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/studentHome/viewCourseByStudent']" routerLinkActive="active">STUDENTDETAILS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/courseDetails" routerLinkActive="active">COURSE DETAILS</a>
+      </li>
+      <li class="nav-item">
+
+        <a class="nav-link"  routerLink="/addCourses" routerLinkActive="active" >ADD COURSE</a>
+      </li>
+      <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/changepassword']" routerLinkActive="active"> CHANGE PASSWORD</a>
+
+      </li>
+      <li class="nav-item" >
+        
+       <a class="nav-link" [routerLink]="['/logout']" routerLinkActive="active"> Log Out</a>
+
+      </li>
+
+    <li class ='nav-item'  >
+          
+              <input type="text"   class="form-control" placeholder="Search">
+       
+         
+    </li>
+
+    </ul>
+
+
+
+ 
+
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Add Course Details</p>
+</div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="coursename">Course Name</label>
+  <input type="text" id="coursename" name="coursename" class="form-control" [(ngModel)]="courseDetails.courseName"   required
+  #courseNameCtrl="ngModel"  
+/>
+<div *ngIf="courseNameCtrl.invalid && (courseNameCtrl.touched || courseNameCtrl.dirty)" class="alert alert-danger">
+  Course name is required
+</div>
+  </div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addCourse()"> Add Chapter </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Course</button> 
+
+<button type="button" class="btn btn-primary mt-2" (click)="reset()"> Reset</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+  <div class="images">
+
+  
+</div>
+
+
+
+</form>
+
+</div>
