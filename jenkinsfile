@@ -1,25 +1,22 @@
-Pipeline{
+pipeline {
     agent any
-    stages{
-        stage("checkout"){
-                steps{
-                        git 'https://github.com/bmuvara/Perfect-learn.git'
-                      }
-                }
-  
-        stage("Test"){
-                steps{
-                       sh 'sudo apt npm install'
-                       sh  'npm test'
-
-                      }
-                }
-        
-        stage("Build"){
-                steps{
-                       sh 'npm run build'
-                    
-                      }
-                }
-
-   
+    stages {
+        stage("checkout") {
+            steps {
+                git 'https://github.com/bmuvara/Perfect-learn.git'
+            }
+        }
+        stage("Test") {
+            steps {
+                sh 'sudo apt-get install npm'
+                sh 'npm install'
+                sh 'npm test'
+            }
+        }
+        stage("Build") {
+            steps {
+                sh 'npm run build'
+            }
+        }
+    }
+}
