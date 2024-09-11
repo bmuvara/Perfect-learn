@@ -7,7 +7,7 @@ pipeline {
                 git(
                     url: 'https://github.com/bmuvara/Perfect-learn.git', // GitHub repository URL
                     branch: 'main' // The branch to checkout
-                    credentialsId: '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'
+                    credentialsId: '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 ---'
                 )
             }
         }
