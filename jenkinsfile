@@ -3,7 +3,7 @@ Pipeline{
     stages{
         stage("checkout"){
                 steps{
-                       checkout scm
+                        git 'https://github.com/bmuvara/Perfect-learn.git'
                       }
                 }
   
