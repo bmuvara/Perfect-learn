@@ -12,13 +12,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm install' // Installing dependencies
-                sh 'npm test'    // Running tests
+                bat 'npm install' // Installing dependencies
+                bat 'npm test'    // Running tests
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build' // Building the project
+                bat 'npm run build' // Building the project
             }
         }
     }
