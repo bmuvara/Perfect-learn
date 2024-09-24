@@ -1,5 +1,5 @@
 .images {
-    background-image: url('../../../assets/images/image1.PNG');  
+    background-image: url('../../../assets/images/image1.png');  
     background-color: #cccccc;
      background-size: cover;  /* Ensure the image covers the entire background */
     background-repeat: no-repeat; /* Prevent the image from repeating */
