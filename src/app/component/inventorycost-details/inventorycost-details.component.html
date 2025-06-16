@@ -1,0 +1,57 @@
+<div class="container">
+    
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Item Description</th>
+                <th>Category</th>
+                <th>Quantity in Stock</th>
+                <th>Unit Measured</th>
+                <th>Unit Cost</th>
+                <th>Total Cost/Unit</th>
+                <th>Salavage Cost</th>
+                <th>Salvage Age</th>
+                <th>Depreciation</th>
+                <th>Purchase Date</th>
+                <th>Total Cost/Unit</th>
+                <th>Supplier Name</th>
+                <th>Storage Location</th>
+                <th>Comment</th>
+                <th>Investment Source</th>                
+
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let iventory of iventories">
+              <td>{{iventory.itemd}}</td>      
+              <td>{{iventory.category}}</td>
+              <td>{{iventory.quantity}}</td> 
+              <td>{{iventory.unitmeasure}}</td>
+              <td>{{iventory.unitcost}}</td>
+              <td>{{iventory.totalcost}}</td>
+              <td>{{iventory.salvagecost}}</td>   
+              <td>{{iventory.age}}</td>
+              <td>{{iventory.depreciation}}</td>
+              <td>{{iventory.purchasedate}}</td>   
+              <td>{{iventory.supplier}}</td>   
+              <td>{{iventory.storagelocation}}</td>
+              <td>{{iventory.remarks}}</td>
+              <td>{{iventory.source}}</td>
+
+
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

@@ -1,0 +1,51 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Animal Name</th>
+                <th>Animal Number</th>
+                <th>DOB</th>
+                <th>SPECIES</th>
+                <th>BREED</th>
+                <th>deworming Date</th>
+                <th>deworming Used</th>
+                <th>Dose Adminstered</th>
+                <th>Next Due Date</th>
+                <th>Vet Name</th>
+                <th>comment</th>
+                
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let deworming of dewormings">
+              <td>{{deworming.animalname}}</td>      
+              <td>{{deworming.animalnumber}}</td>
+              <td>{{deworming.dob}}</td> 
+              <td>{{deworming.species}}</td>
+              <td>{{deworming.breed}}</td>
+              <td>{{deworming.date}}</td>
+              <td>{{deworming.dewormerused}}</td>   
+              <td>{{deworming.doseadminstered}}</td>
+              <td>{{deworming.nextduedate}}</td>
+              <td>{{deworming.vetname}}</td>
+              <td>{{deworming.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

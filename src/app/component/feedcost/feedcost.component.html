@@ -1,0 +1,145 @@
+<div class="container">
+
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Farm Economics Tab</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/costreturndt']" routerLinkActive="active">Cost Return Report</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/invento']" routerLinkActive="active">Add inventory Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/inventod']" routerLinkActive="active">inventory Report</a>
+      </li>
+      
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/labourc']" routerLinkActive="active">Add Labour Cost Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/labourcd']" routerLinkActive="active">Labour Cost Report</a>
+      </li>
+      
+
+      
+
+    </ul>
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="nextduedate" class="form-control" [(ngModel)]="feedcost.date" required>
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="feedtype">Feed Type	</label>
+  <input type="text" id="feedtype" name="feedtype" class="form-control" [(ngModel)]="feedcost.feedtype"   required
+  #feedtypeCtrl="ngModel"  
+/>
+<div *ngIf="feedtypeCtrl.invalid && (feedtypeCtrl.touched || feedtypeCtrl.dirty)" class="alert alert-danger">
+Feed Type	 is required
+</div>
+ </div>
+  </div>
+
+
+ <div class="col-md-4">
+  <div class="form-group">
+  <label for="quantity">Quantity (kg)	</label>
+  <input type="text" id="quantity" name="quantity" class="form-control" [(ngModel)]="feedcost.quantity"   required
+  #quantityCtrl="ngModel"  
+/>
+<div *ngIf="quantityCtrl.invalid && (quantityCtrl.touched || quantityCtrl.dirty)" class="alert alert-danger">
+Quantity (kg)	 is required
+</div>
+ </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="unitprice">Unit Price (kg)	</label>
+  <input type="text" id="unitprice" name="unitprice" class="form-control" [(ngModel)]="feedcost.unitprice"   required
+  #unitpriceCtrl="ngModel"  
+/>
+<div *ngIf="unitpriceCtrl.invalid && (unitpriceCtrl.touched || unitpriceCtrl.dirty)" class="alert alert-danger">
+Unit Price (kg)	 is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="totalcost">Total Cost	</label>
+  <input type="text" id="totalcost" name="totalcost" class="form-control" [(ngModel)]="feedcost.totalcost"   required
+  #totalcostCtrl="ngModel"  
+/>
+<div *ngIf="totalcostCtrl.invalid && (totalcostCtrl.touched || totalcostCtrl.dirty)" class="alert alert-danger">
+Total Cost is required
+</div>
+ </div>
+  </div>
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="feedcost.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addfdcRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

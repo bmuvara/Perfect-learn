@@ -1,0 +1,49 @@
+<p>labourcost-details works!</p>
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Worker Name/ID</th>
+                <th>Labour Type</th>
+                <th>Task Performed</th>
+                <th>Hours Worked</th>
+                <th>Wage Rate (per hour)/Unit</th>
+                <th>Daily Labour Cost</th>
+                <th>Comment</th>
+
+
+
+
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let labourcost of labourcosts">
+              <td>{{labourcost.date}}</td>      
+              <td>{{labourcost.labourid}}</td>
+              <td>{{labourcost.labourtype}}</td> 
+              <td>{{labourcost.taskperformed}}</td>
+              <td>{{labourcost.hoursworked}}</td>
+              <td>{{labourcost.wagerate}}</td>
+              <td>{{labourcost.dailylcost}}</td>   
+              <td>{{labourcost.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

@@ -1,0 +1,16 @@
+ date,animalname,animalnumber,calfname,calfnumber,calfsex,birthweigt,calvingease,placenta,metritis
+
+
+
+fmetrics
+
+     date,animalname,animalnumber,dfservice,dopen,calvingInterval,conceptionrate,serviceperpreg,comment
+
+
+    Heat,
+
+    date,animalname,animalnumber,heatsigns,insemenation,bullsemen,technician,comment
+
+    Pregnacy
+
+    date,animalname,animalnumber,method,result,expecteddate,comment

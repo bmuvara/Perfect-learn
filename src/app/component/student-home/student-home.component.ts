@@ -1,5 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import { AuthService } from '../../auth.service';
+/* import { console } from 'node:inspector'; */
 
 @Component({
   selector: 'app-student-home',
@@ -10,19 +11,17 @@ export class StudentHomeComponent  implements OnInit {
 
 
 
- /*  courseDetails: any[]=[{SrNO:'1',courseName:'Java'},
-  {SrNO:'2',courseName:'Angular'},
-  {SrNO:'3',courseName:'React'},
-  ] */
+
   
-  Courses: any []=[];
+  milkrecords: any []=[];
 
   constructor(private authServices:AuthService){}
 
   ngOnInit() {
-    this.authServices.getCourses().subscribe(
+    this.authServices.getRecord().subscribe(
       (data)=>{
-        this.Courses=data;
+        this.milkrecords=data;
+        console.log('milk reord',data)
       },
       (error)=>{
         console.error ('Error Fetching city data',error)
@@ -35,6 +34,6 @@ export class StudentHomeComponent  implements OnInit {
   }
 
   requestCourse(){
-    console.log("the courseDetails",this.Courses)
+    console.log("the courseDetails",this.milkrecords)
   }
 }

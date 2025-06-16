@@ -1,0 +1,49 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Item Description</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Value/Unit</th>
+                <th>Income YN</th>
+                <th>COST YN</th>
+                <th>TYPE OF COST</th>
+                <th>Comment</th>
+
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let costreturn of costreturns">
+              <td>{{costreturn.date}}</td>      
+              <td>{{costreturn.item}}</td>
+              <td>{{costreturn.unit}}</td> 
+              <td>{{costreturn.quantity}}</td>
+              <td>{{costreturn.price}}</td>
+              <td>{{costreturn.totalvalue}}</td>
+              <td>{{costreturn.incomeyn}}</td>   
+              <td>{{costreturn.costyn}}</td>
+              <td>{{costreturn.typecost}}</td>
+              <td>{{costreturn.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

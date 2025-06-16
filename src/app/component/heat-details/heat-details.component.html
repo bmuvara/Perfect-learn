@@ -1,0 +1,44 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Animal Name</th>
+                <th>Animal ID</th>
+                <th>Heat Signs Observed </th>
+                <th>AI/Natural Service</th>
+                <th>Bull/Semen ID</th>
+                <th>Technician</th>
+                <th>Comment</th>
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let heat of heats">
+              <td>{{heat.date}}</td>      
+              <td>{{heat.animalname}}</td>
+              <td>{{heat.animalnumber}}</td> 
+              <td>{{heat.heatsigns}}</td>
+              <td>{{heat.insemenation}}</td>
+              <td>{{heat.bullsemen}}</td>   
+              <td>{{heat.technician}}</td>           
+              <td>{{heat.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

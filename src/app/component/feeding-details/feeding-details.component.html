@@ -1,0 +1,43 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Animal Group</th>
+                <th>Feed Ingredient</th>
+                <th>Quantity(kg)</th>
+                <th>Dry Matter(%)</th>
+                <th>Total DM (kg)</th>
+                <th>Comment</th>
+
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feedin of feedins">
+              <td>{{feedin.date}}</td>      
+              <td>{{feedin.animalgroup}}</td>
+              <td>{{feedin.feedingredient}}</td> 
+              <td>{{feedin.quantity}}</td>
+              <td>{{feedin.drymatter}}</td>
+              <td>{{feedin.totaldm}}</td>
+              <td>{{feedin.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

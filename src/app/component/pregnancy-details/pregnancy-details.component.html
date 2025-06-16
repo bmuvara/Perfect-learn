@@ -1,0 +1,47 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Animal Name</th>
+                <th>Animal ID(kg)</th>
+                <th>Method</th>
+                <th>Result</th>
+                <th>Expected Calving Date</th>
+                <th>Comment</th>
+
+
+
+
+
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pregnacy of pregnacys">
+              <td>{{pregnacy.date}}</td>      
+              <td>{{pregnacy.animalname}}</td>
+              <td>{{pregnacy.animalnumber}}</td> 
+              <td>{{pregnacy.method}}</td>
+              <td>{{pregnacy.result}}</td>
+              <td>{{pregnacy.expecteddate}}</td>              
+              <td>{{pregnacy.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

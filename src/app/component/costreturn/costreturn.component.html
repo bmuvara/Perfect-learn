@@ -1,0 +1,202 @@
+<div class="container">
+
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Farm Economics Tab</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/costreturndt']" routerLinkActive="active">Cost Return Report</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/invento']" routerLinkActive="active">Add inventory Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/inventod']" routerLinkActive="active">inventory Report</a>
+      </li>
+      
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/labourc']" routerLinkActive="active">Add Labour Cost Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/labourcd']" routerLinkActive="active">Labour Cost Report</a>
+      </li>
+      
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/feedcd']" routerLinkActive="active">Add Feed Cost Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/feedc']" routerLinkActive="active">Feed Cost Report</a>
+      </li>
+
+      
+
+      
+
+    </ul>
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="nextduedate" class="form-control" [(ngModel)]="costreturn.date" required>
+    </div>
+  </div>
+
+  
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="item">Item  Description</label>
+  <input type="text" id="item" name="item" class="form-control" [(ngModel)]="costreturn.item"   required
+  #itemCtrl="ngModel"  
+/>
+<div *ngIf="itemCtrl.invalid && (itemCtrl.touched || itemCtrl.dirty)" class="alert alert-danger">
+  Item name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="unit">Unit</label>
+  <input type="text" id="unit" name="unit" class="form-control" [(ngModel)]="costreturn.unit"   required
+  #unitCtrl="ngModel"  
+/>
+<div *ngIf="unitCtrl.invalid && (unitCtrl.touched || unitCtrl.dirty)" class="alert alert-danger">
+  unit value is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="quantity">Quantity</label>
+  <input type="text" id="quantity" name="quantity" class="form-control" [(ngModel)]="costreturn.quantity"   required
+  #quantityCtrl="ngModel"  
+/>
+<div *ngIf="quantityCtrl.invalid && (quantityCtrl.touched || quantityCtrl.dirty)" class="alert alert-danger">
+  Quantity value is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="price">Price</label>
+  <input type="text" id="price" name="price" class="form-control" [(ngModel)]="costreturn.price"   required
+  #priceCtrl="ngModel"  
+/>
+<div *ngIf="priceCtrl.invalid && (priceCtrl.touched || priceCtrl.dirty)" class="alert alert-danger">
+  Price value is required
+</div>
+ </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="totalvalue">Total Value</label>
+  <input type="text" id="totalvalue" name="totalvalue" class="form-control" [(ngModel)]="costreturn.totalvalue"   required
+  #totalvalueCtrl="ngModel"  
+/>
+<div *ngIf="totalvalueCtrl.invalid && (totalvalueCtrl.touched || totalvalueCtrl.dirty)" class="alert alert-danger">
+  Total Value value is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="incomeyn">INCOME_YN</label>
+  <input type="text" id="incomeyn" name="incomeyn" class="form-control" [(ngModel)]="costreturn.incomeyn"   required
+  #incomeynCtrl="ngModel"  
+/>
+<div *ngIf="incomeynCtrl.invalid && (incomeynCtrl.touched || incomeynCtrl.dirty)" class="alert alert-danger">
+  Income  Flag is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="costyn">COST_YN</label>
+  <input type="text" id="costyn" name="costyn" class="form-control" [(ngModel)]="costreturn.costyn"   required
+  #costynCtrl="ngModel"  
+/>
+<div *ngIf="costynCtrl.invalid && (costynCtrl.touched || costynCtrl.dirty)" class="alert alert-danger">
+  COST  Flag is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="typecost">TYPE OF COST</label>
+  <input type="text" id="typecost" name="typecost" class="form-control" [(ngModel)]="costreturn.typecost"   required
+  #typecostCtrl="ngModel"  
+/>
+<div *ngIf="typecostCtrl.invalid && (typecostCtrl.touched || typecostCtrl.dirty)" class="alert alert-danger">
+ TYPE OF COST  Flag is required
+</div>
+ </div>
+  </div>
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="costreturn.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addcrRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

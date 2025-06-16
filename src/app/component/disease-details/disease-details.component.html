@@ -1,0 +1,58 @@
+
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Animal Name</th>
+                <th>Animal Number</th>
+                <th>DOB</th>
+                <th>SPECIES</th>
+                <th>BREED</th>
+                <th>Signs Observed</th>
+                <th>Suspected Disease </th>
+                <th>Treatment Given</th>
+                <th>Treatment  Date</th>
+                <th>Medicine Used</th>
+                <th>Dose Adminstered</th>
+                <th>Next Due Date</th>
+                <th>Vet Name</th>
+                <th>comment</th>
+                
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let disease of diseases">
+              <td>{{disease.animalname}}</td>      
+              <td>{{disease.animalnumber}}</td>
+              <td>{{disease.dob}}</td> 
+              <td>{{disease.species}}</td>
+              <td>{{disease.breed}}</td>
+              <td>{{disease.signsobserved}}</td> 
+              <td>{{disease.suspecteddisease}}</td>
+              <td>{{disease.treatmentgiven}}</td>
+              <td>{{disease.treatmentdate}}</td>
+              <td>{{disease.doseused}}</td>   
+              <td>{{disease.doseadminstered}}</td>
+              <td>{{disease.nextduedate}}</td>
+              <td>{{disease.vetname}}</td>
+              <td>{{disease.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

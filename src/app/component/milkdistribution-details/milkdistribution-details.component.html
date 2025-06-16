@@ -1,0 +1,43 @@
+<div class="container">
+    
+    
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>custumername</th>
+                <th>custumernumber</th>
+                <th>custumerlocation</th>
+                <th>date</th>
+                <th>TOTAL MILK</th>
+                <th>TOTAL COST</th>
+                <th>COMMENT</th>
+             </tr>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor="let milkdistrib of milkdistributions">
+                   
+              <td>{{milkdistrib.custumername}}</td>      
+              <td>{{milkdistrib.custumernumber}}</td>
+              <td>{{milkdistrib.custumerlocation}}</td> 
+              <td>{{milkdistrib.date}}</td>
+              <td>{{milkdistrib.totalmilk}}</td>
+              <td>{{milkdistrib.totalcost}}</td>
+              <td>{{milkdistrib.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

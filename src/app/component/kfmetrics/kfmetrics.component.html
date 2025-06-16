@@ -1,0 +1,154 @@
+<div class="container">
+
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Key Fertility Metrics Summary</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="kfmetric.date" required>
+    </div>
+  </div>
+
+  
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="kfmetric.animalname"   required
+  #animalnameCtrl="ngModel"  
+/>
+<div *ngIf="animalnameCtrl.invalid && (animalnameCtrl.touched || animalnameCtrl.dirty)" class="alert alert-danger">
+Animal Name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal ID</label>
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="kfmetric.animalnumber"   required
+  #animalnumberCtrl="ngModel"  
+/>
+<div *ngIf="animalnumberCtrl.invalid && (animalnumberCtrl.touched || animalnumberCtrl.dirty)" class="alert alert-danger">
+Animal ID is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="dfservice">Days to First Service</label>
+  <input type="text" id="dfservice" name="dfservice" class="form-control" [(ngModel)]="kfmetric.dfservice"   required
+  #dfserviceCtrl="ngModel"  
+/>
+<div *ngIf="dfserviceCtrl.invalid && (dfserviceCtrl.touched || dfserviceCtrl.dirty)" class="alert alert-danger">
+Days to First Service  is required
+</div>
+ </div>
+  </div>
+  
+  
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="dopen">Days Open</label>
+  <input type="text" id="dopen" name="dopen" class="form-control" [(ngModel)]="kfmetric.dopen"   required
+  #dopenCtrl="ngModel"  
+/>
+<div *ngIf="dopenCtrl.invalid && (dopenCtrl.touched || dopenCtrl.dirty)" class="alert alert-danger">
+Days Open  is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="calvingInterval">Calving Interval</label>
+  <input type="text" id="calvingInterval" name="calvingInterval" class="form-control" [(ngModel)]="kfmetric.calvingInterval"   required
+  #calvingIntervalCtrl="ngModel"  
+/>
+<div *ngIf="calvingIntervalCtrl.invalid && (calvingIntervalCtrl.touched || calvingIntervalCtrl.dirty)" class="alert alert-danger">
+Calving Interval  is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="conceptionrate">Conception Rate (%)</label>
+  <input type="text" id="conceptionrate" name="conceptionrate" class="form-control" [(ngModel)]="kfmetric.conceptionrate"   required
+  #conceptionrateCtrl="ngModel"  
+/>
+<div *ngIf="conceptionrateCtrl.invalid && (conceptionrateCtrl.touched || conceptionrateCtrl.dirty)" class="alert alert-danger">
+Conception Rate (%)  is required
+</div>
+ </div>
+  </div>
+  
+  
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="serviceperpreg">Services per Pregnancy</label>
+  <input type="text" id="serviceperpreg" name="serviceperpreg" class="form-control" [(ngModel)]="kfmetric.serviceperpreg"   required
+  #serviceperpregCtrl="ngModel"  
+/>
+<div *ngIf="serviceperpregCtrl.invalid && (serviceperpregCtrl.touched || serviceperpregCtrl.dirty)" class="alert alert-danger">
+Services per Pregnancy  is required
+</div>
+ </div>
+  </div>
+
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="kfmetric.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addfmRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

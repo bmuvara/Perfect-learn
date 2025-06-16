@@ -1,0 +1,138 @@
+<div class="container">
+
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="heat.date" required>
+    </div>
+  </div>
+
+  
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="heat.animalname"   required
+  #animalnameCtrl="ngModel"  
+/>
+<div *ngIf="animalnameCtrl.invalid && (animalnameCtrl.touched || animalnameCtrl.dirty)" class="alert alert-danger">
+Animal Name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal ID</label>
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="heat.animalnumber"   required
+  #animalnumberCtrl="ngModel"  
+/>
+<div *ngIf="animalnumberCtrl.invalid && (animalnumberCtrl.touched || animalnumberCtrl.dirty)" class="alert alert-danger">
+Animal ID is required
+</div>
+ </div>
+  </div>
+
+  
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="heatsigns">Heat Signs Observed</label>
+  <input type="text" id="heatsigns" name="heatsigns" class="form-control" [(ngModel)]="heat.heatsigns"   required
+  #heatsignsCtrl="ngModel"  
+/>
+<div *ngIf="heatsignsCtrl.invalid && (heatsignsCtrl.touched || heatsignsCtrl.dirty)" class="alert alert-danger">
+Heat Signs Observed (Mounting, Mucus) is required
+</div>
+ </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="insemenation">AI/Natural Service</label>
+  <input type="text" id="insemenation" name="insemenation" class="form-control" [(ngModel)]="heat.insemenation"   required
+  #insemenationCtrl="ngModel"  
+/>
+<div *ngIf="insemenationCtrl.invalid && (insemenationCtrl.touched || insemenationCtrl.dirty)" class="alert alert-danger">
+AI/Natural Service (Mounting, Mucus) is required
+</div>
+ </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="bullsemen">Bull/Semen</label>
+  <input type="text" id="bullsemen" name="bullsemen" class="form-control" [(ngModel)]="heat.bullsemen"   required
+  #bullsemenCtrl="ngModel"  
+/>
+<div *ngIf="bullsemenCtrl.invalid && (bullsemenCtrl.touched || bullsemenCtrl.dirty)" class="alert alert-danger">
+Bull/Semen  is required
+</div>
+ </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="technician">Technician</label>
+  <input type="text" id="technician" name="technician" class="form-control" [(ngModel)]="heat.technician"   required
+  #technicianCtrl="ngModel"  
+/>
+<div *ngIf="technicianCtrl.invalid && (technicianCtrl.touched || technicianCtrl.dirty)" class="alert alert-danger">
+Technician  is required
+</div>
+ </div>
+  </div>
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="heat.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addheRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

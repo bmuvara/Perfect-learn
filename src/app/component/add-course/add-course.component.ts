@@ -16,28 +16,47 @@ export class AddCourseComponent {
 
   successMessage = '';
 
-  courseDetails: { courseName: string; addChapter?: string } = { courseName: '', addChapter: '' };
 
-
-  
+  milkProduction={
+    date: '',
+    cownumber:'',
+    cowname:'',
+    milking_period: '',
+    comment:'',
+    total:''
+ }; 
 
  
 
   constructor(private authServices:AuthService, private route:Router){}
 
+
+//Method for  reset the form
+
+reset(form:any)
+{
+   form.reset();// Resets the form controls
+   this.milkProduction={
+    date: '',
+    cownumber:'',
+    cowname:'',
+    milking_period: '',
+    comment:'',
+    total:'0'
+   };
+
+}
+
   storeCourse(){
-    console.log("welcome to the coourse",this.courseDetails)
+    console.log("welcome to the coourse",this.milkProduction)
   }
 
   addchapter(){
 
-    console.log("welcome to the coourse",this.courseDetails.addChapter)
+    console.log("welcome to the coourse",this.milkProduction)
   }
 
-  reset(){
 
-    console.log("welcome to the coourse",this.courseDetails.addChapter)
-  }
 
   
   
@@ -60,23 +79,26 @@ updateCourse(index: number) {
   }
 }
 
-addCourse() {
-  console.log('Course Details:', this.courseDetails); // Check the entire object before sending
-  if (this.courseDetails.courseName) {
-    this.authServices.addCourse(this.courseDetails.courseName).subscribe({
+
+
+addRecord() {
+  console.log('Milk Production Details:', this.milkProduction); // Check the entire object before sending
+  if (this.milkProduction) {
+    // Destructure the milkProduction object to get the individual properties
+    const { cownumber,cowname,date,milking_period,total,comment } = this.milkProduction;
+    const totalmilk = Number(total);
+
+    this.authServices.addRecord(cownumber,cowname,date,milking_period,totalmilk,comment).subscribe({
       next: response => {
         console.log('Response:', response); // Check what the API is returning
-        console.log('courseName received:', response.courseName);
       },
       error: err => {
-        console.error('Error while adding course:', err);
+        console.error('Error while adding record:', err);
       }
     });
   } else {
-    console.error('Course name is undefined or empty');
+    console.error('Milk production details are undefined or empty');
   }
 }
 
-
 }
-

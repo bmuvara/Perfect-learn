@@ -10,6 +10,7 @@ const register= async (req,res,next)=>{
     const{username,email,password,role}=req.body
   try{/* 
    const hashedPassword=await bcrypt.hash(password,10); */
+   console.log (req.body );
    const user=new User({username,email,password:password,role});
    await user.save();
    res.json({message:'Registration Successfully'})
@@ -61,12 +62,12 @@ const login= async(req,res,next)=>{
 //Register a new user
 
 
-const addCourse= async (req,res,next)=>{
-  
-    const{courseName}=req.body
+const addRecord= async (req,res,next)=>{
+ 
+    const{cownumber,cowname,date,milking_period,total,comment}=req.body
   try{/* 
    const hashedPassword=await bcrypt.hash(password,10); */
-   const course=new Course({courseName});
+   const course=new Milkrecord({cownumber,cowname,date,milking_period,total,comment});
    await course.save();
    res.json({message:'Course Successfully added'})
 
@@ -122,7 +123,7 @@ const getCourses= (req, res) => {
   }
   
 
-module.exports={register,login,addCourse,getCourses,updateCourse}
+module.exports={register,login,getCourses,updateCourse}
 
 
 

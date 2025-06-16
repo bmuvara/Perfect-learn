@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
       const decodedToken: any = jwtDecode(token);
       const userRole = decodedToken.role;
 
-      if (userRole === 'admin' || userRole === 'faculty' || userRole === 'student') {
+      if (userRole === 'Admin' || userRole === 'Vetinary' || userRole === 'Student') {
         return true;
       }
     }

@@ -1,0 +1,50 @@
+<div class="container">
+    
+   
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Animal Name</th>
+                <th>Animal Number</th>
+                <th>DOB</th>
+                <th>SPECIES</th>
+                <th>BREED</th>
+                <th>Vaccination Date</th>
+                <th>Vaccination Used</th>
+                <th>Dose Adminstered</th>
+                <th>Next Due Date</th>
+                <th>Vet Name</th>
+                <th>comment</th>
+                
+             </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vaccination of vaccinations">
+              <td>{{vaccination.animalname}}</td>      
+              <td>{{vaccination.animalnumber}}</td>
+              <td>{{vaccination.dob}}</td> 
+              <td>{{vaccination.species}}</td>
+              <td>{{vaccination.breed}}</td>
+              <td>{{vaccination.vaccdate}}</td>
+              <td>{{vaccination.vaccused}}</td>   
+              <td>{{vaccination.doseadminstered}}</td>
+              <td>{{vaccination.nextduedate}}</td>
+              <td>{{vaccination.vetname}}</td>
+              <td>{{vaccination.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

@@ -1,0 +1,181 @@
+<div class="container">
+    
+  
+
+
+
+ 
+
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Milk Distribution</p>
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal  Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="disease.animalname"   required
+  #animalNameCtrl="ngModel"  
+/>
+<div *ngIf="animalNameCtrl.invalid && (animalNameCtrl.touched || animalNameCtrl.dirty)" class="alert alert-danger">
+  Animal name is required
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal  Number</label>
+
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="disease.animalnumber"   required
+  #animalNumberCtrl="ngModel"  
+/>
+<div *ngIf="animalNumberCtrl.invalid && (animalNumberCtrl.touched || animalNumberCtrl.dirty)" class="alert alert-danger">
+  Cow Number is required
+</div>
+  </div>
+</div>
+
+</div>
+  <div class=" col-md-6">
+    <div class="form-group">
+      <label for="dob">Date of Bearth:</label>
+      <input type="date" id="dob" name="dob" class="form-control" [(ngModel)]="disease.dob" required>
+    </div>
+  </div>
+  
+   <div class=" col-md-6">
+    <div class="form-group">
+      <label for="species">species:</label>
+      <input type="text" id="species" name="species" class="form-control" [(ngModel)]="disease.species" required>
+    </div>
+  </div>
+
+  <div class=" col-md-6">
+    <div class="form-group">
+      <label for="breed">breed:</label>
+      <input type="text" id="breed" name="breed" class="form-control" [(ngModel)]="disease.breed" required>
+    </div>
+  </div>
+
+    <div class=" col-md-6">
+    <div class="form-group">
+      <label for="signsobserved">signsobserved:</label>
+      <input type="text" id="signsobserved" name="signsobserved" class="form-control" [(ngModel)]="disease.signsobserved" required>
+    </div>
+  </div>
+
+   <div class=" col-md-6">
+    <div class="form-group">
+      <label for="suspecteddisease">suspecteddisease:</label>
+      <input type="text" id="suspecteddisease" name="suspecteddisease" class="form-control" [(ngModel)]="disease.suspecteddisease" required>
+    </div>
+  </div>
+
+   <div class=" col-md-6">
+    <div class="form-group">
+      <label for="treatmentgiven">treatmentgiven:</label>
+      <input type="text" id="treatmentgiven" name="treatmentgiven" class="form-control" [(ngModel)]="disease.treatmentgiven" required>
+    </div>
+  </div>
+
+   
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="treatmentdate">Date of Treatment:</label>
+      <input type="date" id="treatmentdate" name="treatmentdate" class="form-control" [(ngModel)]="disease.treatmentdate" required>
+    </div>
+  </div>
+ 
+  <div class="col-md-6">
+    <div class="form-group">
+    <label for="doseused">Dose Used</label>
+    <input type="text" id="doseused" name="doseused" class="form-control" [(ngModel)]="disease.doseused"   required
+    #doseusedCtrls="ngModel"  
+  />
+  <div *ngIf="doseusedCtrls.invalid && (doseusedCtrls.touched || doseusedCtrls.dirty)" class="alert alert-danger">
+    Dose Used is required
+  </div>
+    </div>
+  </div>
+
+
+    <div class="col-md-6">
+    <div class="form-group">
+    <label for="doseadminstered">Dose Adminstered</label>
+    <input type="text" id="doseadminstered" name="doseadminstered" class="form-control" [(ngModel)]="disease.doseadminstered"   required
+    #doseAdminsteredCtrl="ngModel"  
+  />
+  <div *ngIf="doseAdminsteredCtrl.invalid && (doseAdminsteredCtrl.touched || doseAdminsteredCtrl.dirty)" class="alert alert-danger">
+    Dose Adminstered is required
+  </div>
+    </div>
+  </div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="nextduedate">Next Due date :</label>
+      <input type="date" id="nextduedate" name="nextduedate" class="form-control" [(ngModel)]="disease.nextduedate" required>
+    </div>
+  </div>
+
+  <div class="col-md-4"></div>
+    <div class="form-group">
+    <label for="vetname">Vetname</label>
+    <input type="text" id="vetname" name="vetname" class="form-control" [(ngModel)]="disease.vetname"   required
+    #vetnameCtrls="ngModel"  
+  />
+  <div *ngIf="vetnameCtrls.invalid && (vetnameCtrls.touched || vetnameCtrls.dirty)" class="alert alert-danger">
+    Vetname is required
+  </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="disease.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+    </div>
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="adddisRecord()"> Add deworming Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+
+</div>
+</div>
+</form>
+
+
+</div>

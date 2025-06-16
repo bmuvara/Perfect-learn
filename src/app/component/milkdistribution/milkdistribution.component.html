@@ -1,0 +1,170 @@
+<div class="container">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Shambani</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Distribution']" routerLinkActive="active">Distribution Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/studentHome/viewCourseByStudent']" routerLinkActive="active">MILK DETAILS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Recordmilk']" routerLinkActive="active">Record Milk DETAILS</a>
+      </li>
+      
+      <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/changepassword']" routerLinkActive="active"> CHANGE PASSWORD</a>
+
+      </li>
+      <li class="nav-item" >
+        
+       <a class="nav-link" [routerLink]="['/logout']" routerLinkActive="active"> Log Out</a>
+
+      </li>
+
+    <li class ='nav-item'  >
+          
+              <input type="text"   class="form-control" placeholder="Search">
+       
+         
+    </li>
+
+    </ul>
+
+
+
+ 
+
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Milk Distribution to Customers</p>
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="customername">Customer  Name</label>
+  <input type="text" id="customername" name="customername" class="form-control" [(ngModel)]="milkdistribution.custumername"   required
+  #customerNameCtrl="ngModel"  
+/>
+<div *ngIf="customerNameCtrl.invalid && (customerNameCtrl.touched || customerNameCtrl.dirty)" class="alert alert-danger">
+  Course name is required
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="customernumbers">Customer  Number</label>
+  <input type="text" id="customernumbers" name="customernumbers" class="form-control" [(ngModel)]="milkdistribution.custumernumber"   required
+  #customerNumberCtrl="ngModel"  
+/>
+<div *ngIf="customerNumberCtrl.invalid && (customerNumberCtrl.touched || customerNumberCtrl.dirty)" class="alert alert-danger">
+  Cow Number is required
+</div>
+  </div>
+</div>
+
+</div>
+  <div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Distribution DATE:</label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="milkdistribution.date" required>
+    </div>
+  </div>
+  
+ 
+
+
+  
+  <div class="col-md-6">
+    <div class="form-group">
+    <label for="totalmilk">Total Milk in Litres</label>
+    <input type="text" id="totalmilk" name="totalmilk" class="form-control" [(ngModel)]="milkdistribution.totalmilk"   required
+    #totalMilkCtrl="ngModel"  
+  />
+  <div *ngIf="totalMilkCtrl.invalid && (totalMilkCtrl.touched || totalMilkCtrl.dirty)" class="alert alert-danger">
+    Total Milk per given period is required
+  </div>
+    </div>
+  </div>
+
+  <div class="col-md-4"></div>
+    <div class="form-group">
+    <label for="totalcosts">Total Cost in Tsh</label>
+    <input type="text" id="totalcosts" name="totalcosts" class="form-control" [(ngModel)]="milkdistribution.totalcost"   required
+    #totalCostCtrl="ngModel"  
+  />
+  <div *ngIf="totalCostCtrl.invalid && (totalCostCtrl.touched || totalCostCtrl.dirty)" class="alert alert-danger">
+    Total Cost per given period is required
+  </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4"></div>
+    <div class="form-group">
+    <label for="location">Customer location</label>
+    <input type="text" id="location" name="location" class="form-control" [(ngModel)]="milkdistribution.custumerlocation"   required
+    #locationCtrls="ngModel"  
+  />
+  <div *ngIf="locationCtrls.invalid && (locationCtrls.touched || locationCtrls.dirty)" class="alert alert-danger">
+    Customer location per given period is required
+  </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="milkdistribution.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+    </div>
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addDistrecord()"> Add Milk Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+</form>
+
+</div>

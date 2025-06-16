@@ -1,0 +1,141 @@
+<div class="container">
+
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="labourcost.date" required>
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="labourid">Worker Name/ID	</label>
+  <input type="text" id="labourid" name="labourid" class="form-control" [(ngModel)]="labourcost.labourid"   required
+  #labouridCtrl="ngModel"  
+/>
+<div *ngIf="labouridCtrl.invalid && (labouridCtrl.touched || labouridCtrl.dirty)" class="alert alert-danger">
+Worker Name/ID	 is required
+</div>
+ </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="labourtype">Labour Type	</label>
+  <input type="text" id="labourtype" name="labourtype" class="form-control" [(ngModel)]="labourcost.labourtype"   required
+  #labourtypeCtrl="ngModel"  
+/>
+<div *ngIf="labourtypeCtrl.invalid && (labourtypeCtrl.touched || labourtypeCtrl.dirty)" class="alert alert-danger">
+Labour Type	 is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="taskperformed">Task Performed	</label>
+  <input type="text" id="taskperformed" name="taskperformed" class="form-control" [(ngModel)]="labourcost.taskperformed"   required
+  #taskperformedCtrl="ngModel"  
+/>
+<div *ngIf="taskperformedCtrl.invalid && (taskperformedCtrl.touched || taskperformedCtrl.dirty)" class="alert alert-danger">
+Task Performed	 is required
+</div>
+ </div>
+  </div>
+
+
+
+ <div class="col-md-4">
+  <div class="form-group">
+  <label for="hoursworked">Hours Worked	</label>
+  <input type="text" id="hoursworked" name="hoursworked" class="form-control" [(ngModel)]="labourcost.hoursworked"   required
+  #hoursworkedCtrl="ngModel"  
+/>
+<div *ngIf="hoursworkedCtrl.invalid && (hoursworkedCtrl.touched || hoursworkedCtrl.dirty)" class="alert alert-danger">
+Hours Worked	 is required
+</div>
+ </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="wagerate">Wage Rate	</label>
+  <input type="text" id="wagerate" name="wagerate" class="form-control" [(ngModel)]="labourcost.wagerate"   required
+  #wagerateCtrl="ngModel"  
+/>
+<div *ngIf="wagerateCtrl.invalid && (wagerateCtrl.touched || wagerateCtrl.dirty)" class="alert alert-danger">
+Wage Rate	 is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="dailylcost">Daily Labour Cost	</label>
+  <input type="text" id="dailylcost" name="dailylcost" class="form-control" [(ngModel)]="labourcost.dailylcost"   required
+  #dailylcostCtrl="ngModel"  
+/>
+<div *ngIf="dailylcostCtrl.invalid && (dailylcostCtrl.touched || dailylcostCtrl.dirty)" class="alert alert-danger">
+Daily Labour Cost	 is required
+</div>
+ </div>
+  </div>     
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="labourcost.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addlbcRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

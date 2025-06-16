@@ -1,0 +1,179 @@
+<div class="container">
+
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="calving.date" required>
+    </div>
+  </div>
+
+  
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="calving.animalname"   required
+  #animalnameCtrl="ngModel"  
+/>
+<div *ngIf="animalnameCtrl.invalid && (animalnameCtrl.touched || animalnameCtrl.dirty)" class="alert alert-danger">
+Animal Name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal ID</label>
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="calving.animalnumber"   required
+  #animalnumberCtrl="ngModel"  
+/>
+<div *ngIf="animalnumberCtrl.invalid && (animalnumberCtrl.touched || animalnumberCtrl.dirty)" class="alert alert-danger">
+Animal ID is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="calfname">Calf Name</label>
+  <input type="text" id="calfname" name="calfname" class="form-control" [(ngModel)]="calving.calfname"   required
+  #calfnameCtrl="ngModel"  
+/>
+<div *ngIf="calfnameCtrl.invalid && (calfnameCtrl.touched || calfnameCtrl.dirty)" class="alert alert-danger">
+Calf Name  is required
+</div>
+ </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="calfnumber">Calf Number</label>
+  <input type="text" id="calfnumber" name="calfnumber" class="form-control" [(ngModel)]="calving.calfnumber"   required
+  #calfnumberCtrl="ngModel"  
+/>
+<div *ngIf="calfnumberCtrl.invalid && (calfnumberCtrl.touched || calfnumberCtrl.dirty)" class="alert alert-danger">
+Calf Number  is required
+</div>
+ </div>
+  </div>
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="calfsex">Calf Sex</label>
+  <input type="text" id="calfsex" name="calfsex" class="form-control" [(ngModel)]="calving.calfsex"   required
+  #calfsexCtrl="ngModel"  
+/>
+<div *ngIf="calfsexCtrl.invalid && (calfsexCtrl.touched || calfsexCtrl.dirty)" class="alert alert-danger">
+Calf Sex  is required
+</div>
+ </div>
+  </div>
+
+ 
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="birthweigt">Birth Weight (kg)</label>
+  <input type="text" id="birthweigt" name="birthweigt" class="form-control" [(ngModel)]="calving.birthweigt"   required
+  #birthweigtCtrl="ngModel"  
+/>
+<div *ngIf="birthweigtCtrl.invalid && (birthweigtCtrl.touched || birthweigtCtrl.dirty)" class="alert alert-danger">
+Birth Weight (kg)  is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="calvingease">Calving Ease (1-5)</label>
+  <input type="text" id="calvingease" name="calvingease" class="form-control" [(ngModel)]="calving.calvingease"   required
+  #calvingeaseCtrl="ngModel"  
+/>
+<div *ngIf="calvingeaseCtrl.invalid && (calvingeaseCtrl.touched || calvingeaseCtrl.dirty)" class="alert alert-danger">
+Calving Ease (1-5)  is required
+</div>
+ </div>
+  </div>
+
+
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="placenta">Placenta (Y/N)</label>
+  <input type="text" id="placenta" name="placenta" class="form-control" [(ngModel)]="calving.placenta"   required
+  #placentaCtrl="ngModel"  
+/>
+<div *ngIf="placentaCtrl.invalid && (placentaCtrl.touched || placentaCtrl.dirty)" class="alert alert-danger">
+Placenta (Y/N)  is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="metritis">Metritis (Y/N)</label>
+  <input type="text" id="metritis" name="metritis" class="form-control" [(ngModel)]="calving.metritis"   required
+  #metritisCtrl="ngModel"  
+/>
+<div *ngIf="metritisCtrl.invalid && (metritisCtrl.touched || metritisCtrl.dirty)" class="alert alert-danger">
+Metritis (Y/N)  is required
+</div>
+ </div>
+  </div>
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="calving.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addcalRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

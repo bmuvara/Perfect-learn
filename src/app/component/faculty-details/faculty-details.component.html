@@ -1,1 +1,66 @@
-<p>faculty-details works!</p>
+  <div class="container">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Shambani</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Milkdistribution']" routerLinkActive="active">Milkdistribution</a>
+      </li>
+
+     
+      <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/admin/Vacc']" routerLinkActive="active"> Health & Treatment</a>
+
+      </li>
+       <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/admin/pregna']" routerLinkActive="active"> Fertility</a>
+
+
+             <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/admin/costreturn']" routerLinkActive="active"> Economics</a>
+
+      </li>
+             <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="['/admin/feeding']" routerLinkActive="active"> Feeds</a>
+
+      </li>
+      <li class="nav-item" >
+        
+       <a class="nav-link" [routerLink]="['/logout']" routerLinkActive="active"> Log Out</a>
+
+      </li>
+
+    <li class ='nav-item'  >
+          
+              <input type="text"   class="form-control" placeholder="Search">
+       
+         
+    </li>
+
+    </ul>
+
+
+
+ 
+
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<div>
+  <h2>Admin Dashboard</h2>
+  <!-- This router-outlet is needed for child routes to render -->
+  <router-outlet></router-outlet>
+</div>
+
+
+
+</div>

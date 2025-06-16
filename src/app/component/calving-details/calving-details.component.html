@@ -1,0 +1,51 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Animal Name</th>
+                <th>Animal ID</th>
+                <th>Calf Name</th>
+                <th>Calf ID</th>                
+                <th>Calf Sex</th>
+                <th>Birth Weight (kg)</th>
+                <th>Calving Ease (1-5)</th>
+                <th>Retained Placenta (Y/N)</th>
+                <th>Metritis (Y/N)</th>
+                <th>Comment</th>
+             </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let calving of calvings">
+              <td>{{calving.date}}</td>      
+              <td>{{calving.animalname}}</td>
+              <td>{{calving.animalnumber}}</td> 
+              <td>{{calving.calfname}}</td>
+              <td>{{calving.calfnumber}}</td>
+              <td>{{calving.calfsex}}</td>   
+              <td>{{calving.birthweigt}}</td>    
+              <td>{{calving.calvingease}}</td> 
+              <td>{{calving.placenta}}</td>   
+              <td>{{calving.metritis}}</td>                        
+              <td>{{calving.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+

@@ -1,0 +1,216 @@
+<div class="container">
+
+ 
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="itemd">Item Description </label>
+      <input type="text" id="itemd" name="itemd" class="form-control" [(ngModel)]="iventory.itemd" required>
+    </div>
+  </div>
+
+  
+<div class="col-md-4">
+  <div class="form-group">
+  <label for=category>Category</label>
+  <input type="text" id=category name=category class="form-control" [(ngModel)]="iventory.category"   required
+  #categoryCtrl="ngModel"  
+/>
+<div *ngIf="categoryCtrl.invalid && (categoryCtrl.touched || categoryCtrl.dirty)" class="alert alert-danger">
+  Item name is required
+</div>
+ </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="quantity">Quantity</label>
+  <input type="text" id="quantity" name="quantity" class="form-control" [(ngModel)]="iventory.quantity"   required
+  #quantityCtrl="ngModel"  
+/>
+<div *ngIf="quantityCtrl.invalid && (quantityCtrl.touched || quantityCtrl.dirty)" class="alert alert-danger">
+  Quantity value is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="unitmeasure">Unit</label>
+  <input type="text" id="unitmeasure" name="unitmeasure" class="form-control" [(ngModel)]="iventory.unitmeasure"   required
+  #unitmeasureCtrl="ngModel"  
+/>
+<div *ngIf="unitmeasureCtrl.invalid && (unitmeasureCtrl.touched || unitmeasureCtrl.dirty)" class="alert alert-danger">
+  unit value is required
+</div>
+ </div>
+  </div>
+
+
+             
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="unitcost">Unit Cost</label>
+  <input type="text" id="unitcost" name="unitcost" class="form-control" [(ngModel)]="iventory.unitcost"   required
+  #unitcostCtrl="ngModel"  
+/>
+<div *ngIf="unitcostCtrl.invalid && (unitcostCtrl.touched || unitcostCtrl.dirty)" class="alert alert-danger">
+  unit value is required
+</div>
+ </div>
+  </div>              
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="totalcost">Total Cost</label>
+  <input type="text" id="totalcost" name="totalcost" class="form-control" [(ngModel)]="iventory.totalcost"   required
+  #totalcostCtrl="ngModel"  
+/>
+<div *ngIf="totalcostCtrl.invalid && (totalcostCtrl.touched || totalcostCtrl.dirty)" class="alert alert-danger">
+  Total Cost value is required
+</div>
+ </div>
+  </div>
+
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="salvagecost">Salvage Cost</label>
+  <input type="text" id="salvagecost" name="salvagecost" class="form-control" [(ngModel)]="iventory.salvagecost"   required
+  #salvagecostCtrl="ngModel"  
+/>
+<div *ngIf="salvagecostCtrl.invalid && (salvagecostCtrl.touched || salvagecostCtrl.dirty)" class="alert alert-danger">
+  Salvage Cost  Value is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="age">Salvage Age</label>
+  <input type="text" id="age" name="age" class="form-control" [(ngModel)]="iventory.age"   required
+  #ageCtrl="ngModel"  
+/>
+<div *ngIf="ageCtrl.invalid && (ageCtrl.touched || ageCtrl.dirty)" class="alert alert-danger">
+  Salvage Age is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="depreciation">Depreciation Cost</label>
+  <input type="text" id="depreciation" name="depreciation" class="form-control" [(ngModel)]="iventory.depreciation"   required
+  #depreciationCtrl="ngModel"  
+/>
+<div *ngIf="depreciationCtrl.invalid && (depreciationCtrl.touched || depreciationCtrl.dirty)" class="alert alert-danger">
+ Depreciation Cost is required
+</div>
+ </div>
+  </div>
+
+
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="purchasedate">Purchase Date</label>
+  <input type="date" id="purchasedate" name="purchasedate" class="form-control" [(ngModel)]="iventory.purchasedate"   required
+  #purchasedateCtrl="ngModel"  
+/>
+<div *ngIf="purchasedateCtrl.invalid && (purchasedateCtrl.touched || purchasedateCtrl.dirty)" class="alert alert-danger">
+ Purchase Date Cost is required
+</div>
+ </div>
+  </div>
+
+
+ <div class="col-md-4">
+  <div class="form-group">
+  <label for="supplier">Supplier Name</label>
+  <input type="text" id="supplier" name="supplier" class="form-control" [(ngModel)]="iventory.supplier"   required
+  #supplierCtrl="ngModel"  
+/>
+<div *ngIf="supplierCtrl.invalid && (supplierCtrl.touched || supplierCtrl.dirty)" class="alert alert-danger">
+Supplier Name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="storagelocation">Storage Location Name</label>
+  <input type="text" id="storagelocation" name="storagelocation" class="form-control" [(ngModel)]="iventory.storagelocation"   required
+  #storagelocationCtrl="ngModel"  
+/>
+<div *ngIf="storagelocationCtrl.invalid && (storagelocationCtrl.touched || storagelocationCtrl.dirty)" class="alert alert-danger">
+Storage Location  Name is required
+</div>
+ </div>
+  </div>
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="remarks">Remarks </label>
+    <input type="text" id="remarks" name="remarks" class="form-control" [(ngModel)]="iventory.remarks"   required
+    #remarksCtrl="ngModel"  
+  />
+  <div *ngIf="remarksCtrl.invalid && (remarksCtrl.touched || remarksCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired remarks
+  </div>
+   </div>
+  </div>
+  
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="source">Investment Source</label>
+  <input type="text" id="source" name="source" class="form-control" [(ngModel)]="iventory.source"   required
+  #sourceCtrl="ngModel"  
+/>
+<div *ngIf="sourceCtrl.invalid && (sourceCtrl.touched || sourceCtrl.dirty)" class="alert alert-danger">
+Investment Source is required
+</div>
+ </div>
+  </div>  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addcrRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

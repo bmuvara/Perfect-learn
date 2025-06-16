@@ -55,15 +55,15 @@ login(){
         
 
         // Navigate based on role
-        if (userRole === 'admin') {
+        if (userRole === 'Admin') {
           console.log('Navigating to Admin Page');
           this.route.navigate(['/admin']);
         } else if (userRole === 'student') {
-          console.log('Navigating to student Page');
+          console.log('Navigating to Vitinery Page');
           this.route.navigate(['/studentHome/viewCourseByStudent']);
-        } else if (userRole === 'faculty') {
+        } else if (userRole === 'Vetinary') {
           console.log('Navigating to student Page');
-          this.route.navigate(['/Faculty']);
+          this.route.navigate(['/Vetinary']);
         }
         else {
           console.log('Unknown role, staying on login page');

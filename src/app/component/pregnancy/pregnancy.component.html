@@ -1,0 +1,169 @@
+<div class="container">
+
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Farm Economics Tab</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/pregnad']" routerLinkActive="active">Pregnancy Report</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/fkm']" routerLinkActive="active">Add Fertility Metrics Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/fkmd']" routerLinkActive="active">Fertility Metrics Report</a>
+      </li>
+      
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/heat']" routerLinkActive="active">Add Heat Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/heatd']" routerLinkActive="active">Heat Report</a>
+      </li>
+      
+        <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/calv']" routerLinkActive="active">Add Feed Cost Record</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/calvd']" routerLinkActive="active">Feed Cost Report</a>
+      </li>
+
+      
+
+      
+
+    </ul>
+    
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Daily Cost and Return</p>
+</div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" class="form-control" [(ngModel)]="pregnacy.date" required>
+    </div>
+  </div>
+
+  
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="pregnacy.animalname"   required
+  #animalnameCtrl="ngModel"  
+/>
+<div *ngIf="animalnameCtrl.invalid && (animalnameCtrl.touched || animalnameCtrl.dirty)" class="alert alert-danger">
+Animal Name is required
+</div>
+ </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal ID</label>
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="pregnacy.animalnumber"   required
+  #animalnumberCtrl="ngModel"  
+/>
+<div *ngIf="animalnumberCtrl.invalid && (animalnumberCtrl.touched || animalnumberCtrl.dirty)" class="alert alert-danger">
+Animal ID is required
+</div>
+ </div>
+  </div>
+
+  
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="method">Method</label>
+  <input type="text" id="method" name="method" class="form-control" [(ngModel)]="pregnacy.method"   required
+  #methodCtrl="ngModel"  
+/>
+<div *ngIf="methodCtrl.invalid && (methodCtrl.touched || methodCtrl.dirty)" class="alert alert-danger">
+Method (US/Palpation/Blood) is required
+</div>
+ </div>
+  </div>
+
+ 
+  <div class="col-md-4">
+  <div class="form-group">
+  <label for="result">Result</label>
+  <input type="text" id="result" name="result" class="form-control" [(ngModel)]="pregnacy.result"   required
+  #resultCtrl="ngModel"  
+/>
+<div *ngIf="resultCtrl.invalid && (resultCtrl.touched || resultCtrl.dirty)" class="alert alert-danger">
+Result (Pregnant/Open) is required
+</div>
+ </div>
+  </div>
+
+ 
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="expecteddate">Expected Calving Date</label>
+  <input type="date" id="expecteddate" name="expecteddate" class="form-control" [(ngModel)]="pregnacy.expecteddate"   required
+  #expecteddateCtrl="ngModel"  
+/>
+<div *ngIf="expecteddateCtrl.invalid && (expecteddateCtrl.touched || expecteddateCtrl.dirty)" class="alert alert-danger">
+Expected Calving Date is required
+</div>
+ </div>
+  </div>
+
+
+
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="pregnacy.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+   </div>
+  </div>
+  
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addpreRecord()"> Add cost and return Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+</div>
+
+
+
+</form>
+
+
+</div>

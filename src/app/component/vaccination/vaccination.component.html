@@ -1,0 +1,204 @@
+<div class="container">
+    
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item" class="col-md-2">
+            <p>Shambani</p>
+          </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/vaccination-details']" routerLinkActive="active">Add Vaccination Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Vaccd']" routerLinkActive="active">Vaccination Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/dewod" routerLinkActive="active">Dewormings DETAILS</a>
+      </li>
+      
+      <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="'/admin/dewo'" routerLinkActive="active"> Add Dewormings Details</a>
+
+      </li>
+
+        <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="'/admin/diss'" routerLinkActive="active"> Add Disease Details</a>
+
+      </li>
+
+        <li class="nav-item">
+        
+       <a class="nav-link" [routerLink]="'/admin/dissd'" routerLinkActive="active"> Add Disease Details</a>
+
+      </li>
+      <li class="nav-item" >
+        
+       <a class="nav-link" [routerLink]="['/logout']" routerLinkActive="active"> Log Out</a>
+
+      </li>
+
+    <li class ='nav-item'  >
+          
+              <input type="text"   class="form-control" placeholder="Search">
+       
+         
+    </li>
+
+    </ul>
+
+
+
+ 
+
+<div class='container mt-3'>
+    <div>
+<b><p>welcome to Home page Admin</p></b>
+</div>
+
+<form #addForm="ngForm" (ngSubmit)="storeCourse()" novalidate>
+<div  class="row g-3" >
+
+<div>
+    <p class="col-md-3"> Record Cow Vaccination</p>
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalname">Animal  Name</label>
+  <input type="text" id="animalname" name="animalname" class="form-control" [(ngModel)]="vaccinerecord.animalname"   required
+  #animalNameCtrl="ngModel"  
+/>
+<div *ngIf="animalNameCtrl.invalid && (animalNameCtrl.touched || animalNameCtrl.dirty)" class="alert alert-danger">
+  Animal name is required
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="form-group">
+  <label for="animalnumber">Animal  Number</label>
+
+  <input type="text" id="animalnumber" name="animalnumber" class="form-control" [(ngModel)]="vaccinerecord.animalnumber"   required
+  #animalNumberCtrl="ngModel"  
+/>
+<div *ngIf="animalNumberCtrl.invalid && (animalNumberCtrl.touched || animalNumberCtrl.dirty)" class="alert alert-danger">
+  Cow Number is required
+</div>
+  </div>
+</div>
+
+</div>
+  <div class=" col-md-6">
+    <div class="form-group">
+      <label for="dob">Date of Bearth:</label>
+      <input type="date" id="dob" name="dob" class="form-control" [(ngModel)]="vaccinerecord.dob" required>
+    </div>
+  </div>
+  
+   <div class=" col-md-6">
+    <div class="form-group">
+      <label for="species">species:</label>
+      <input type="text" id="species" name="species" class="form-control" [(ngModel)]="vaccinerecord.species" required>
+    </div>
+  </div>
+
+    <div class=" col-md-6">
+    <div class="form-group">
+      <label for="breed">breed:</label>
+      <input type="text" id="breed" name="breed" class="form-control" [(ngModel)]="vaccinerecord.breed" required>
+    </div>
+  </div>
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="vaccdate">Date of Vacciniation:</label>
+      <input type="date" id="vaccdate" name="vaccdate" class="form-control" [(ngModel)]="vaccinerecord.vaccdate" required>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="form-group">
+    <label for="vaccused">Vacciniation Used</label>
+    <input type="text" id="vaccused" name="vaccused" class="form-control" [(ngModel)]="vaccinerecord.vaccused"   required
+    #vaccusedCtrls="ngModel"  
+  />
+  <div *ngIf="vaccusedCtrls.invalid && (vaccusedCtrls.touched || vaccusedCtrls.dirty)" class="alert alert-danger">
+    Vaccination Used is required
+  </div>
+    </div>
+  </div>
+
+
+    <div class="col-md-6">
+    <div class="form-group">
+    <label for="doseadminstered">Dose Adminstered</label>
+    <input type="text" id="doseadminstered" name="doseadminstered" class="form-control" [(ngModel)]="vaccinerecord.doseadminstered"   required
+    #doseAdminsteredCtrl="ngModel"  
+  />
+  <div *ngIf="doseAdminsteredCtrl.invalid && (doseAdminsteredCtrl.touched || doseAdminsteredCtrl.dirty)" class="alert alert-danger">
+    Dose Adminstered is required
+  </div>
+    </div>
+  </div>
+
+
+<div class=" col-md-6">
+    <div class="form-group">
+      <label for="nextduedate">Next Due date :</label>
+      <input type="date" id="nextduedate" name="nextduedate" class="form-control" [(ngModel)]="vaccinerecord.nextduedate" required>
+    </div>
+  </div>
+
+  <div class="col-md-4"></div>
+    <div class="form-group">
+    <label for="vetname">Vetname</label>
+    <input type="text" id="vetname" name="vetname" class="form-control" [(ngModel)]="vaccinerecord.vetname"   required
+    #vetnameCtrls="ngModel"  
+  />
+  <div *ngIf="vetnameCtrls.invalid && (vetnameCtrls.touched || vetnameCtrls.dirty)" class="alert alert-danger">
+    Vetname is required
+  </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+    <div class="form-group">
+    <label for="comment">Comment </label>
+    <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="vaccinerecord.comment"   required
+    #commentCtrl="ngModel"  
+  />
+  <div *ngIf="commentCtrl.invalid && (commentCtrl.touched || commentCtrl.dirty)" class="alert alert-danger">
+    Kindly update with desired Comment
+  </div>
+    </div>
+  
+
+
+
+
+<div class="form-group">
+
+<button type="button" class="btn btn-primary mt-2" (click)="addvRecord()"> Add Milk Record </button>
+
+</div>
+
+<div class="row g-3 mt-3">
+
+<div class="form-group">
+
+<!-- <button type="button" class="btn btn-primary mt-2" (click)="updateCourse(0)">Update Milk Record</button> 
+ -->
+<button type="button" class="btn btn-primary mt-2" (click)="reset(addForm)"> Reset</button>
+
+</div>
+
+</div>
+</div>
+</form>
+
+
+</div>

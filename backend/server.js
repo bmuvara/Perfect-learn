@@ -5,6 +5,21 @@ const cors = require('cors');
 const connectDB=require('./../backend/db/db')
 const userRoutes=require('./../backend/routes/users')
 const authRoutes=require('./../backend/routes/auth'); 
+const dwormRoutes=require('./routes/Treatment/deworming');
+const vaccRoutes=require('./routes/Treatment/vacc');
+const diseaseRoutes=require('./routes/Treatment/disease')
+const recordRoutes=require('./routes/mrecord')
+const drecordRoutes=require('./routes/mdistribution')
+const pregnancyRoutes=require('./routes/Fertility/pregnancy')
+const heatRoutes=require('./routes/Fertility/heat')
+const fmetricsRoutes=require('./routes/Fertility/fmetrics')
+const calvingRoutes=require('./routes/Fertility/calving')
+const costreturnRoutes=require('./routes/Economics/costreturn')
+const feedcostRoutes=require('./routes/Economics/feedcost')
+const inventorycostRoutes=require('./routes/Economics/inventorycost')
+const labourcostRoutes=require('./routes/Economics/labourcost')
+const feedingcostRoutes=require('./routes/Feeding/feed')
+
 const User = require('./models/users');
 const { authenticate } = require('./middleware/auth'); 
 
@@ -27,6 +42,53 @@ app.use('/auth',authRoutes)
 
 //Define User routes
 app.use('/user',userRoutes,authenticate)
+
+//Define MilkRecord routes
+app.use('/record',recordRoutes)
+
+//Define MilkdRecord routes
+app.use('/drecord',drecordRoutes)
+
+//Define deworningRecord routes
+app.use('/dwrecord',dwormRoutes)
+
+//Define VaccinationRecord routes
+app.use('/vrecord',vaccRoutes)
+
+//Define diseaseRecord routes
+app.use('/disrecord',diseaseRoutes)
+
+//Define calvingRecord routes
+app.use('/calrecord',calvingRoutes)
+
+//Define fmetricsRecord routes
+app.use('/fmrecord',fmetricsRoutes)
+
+//Define heatRecord routes
+app.use('/hrecord',heatRoutes)
+
+//Define pregnancyRecord routes
+app.use('/prrecord',pregnancyRoutes)
+
+//Define costreturn under Economics routes
+app.use('/economics/crrecord',costreturnRoutes)
+
+//Define feedcost under Economics routes
+app.use('/economics/ferecord',feedcostRoutes)
+
+
+//Define inventorycost under Economics routes
+app.use('/economics/increcord',inventorycostRoutes)
+
+
+//Define labourcost under Economics routes
+
+app.use('/economics/lbcrecord',labourcostRoutes)
+
+
+//Define labourcost under Economics routes
+
+app.use('/feeding/ferecord',feedingcostRoutes)
 
 
 

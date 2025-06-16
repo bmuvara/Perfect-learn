@@ -1,0 +1,49 @@
+<div class="container">
+    
+  
+  
+     <div>
+         <table class="table">
+             <thead>
+             <tr>
+                <th>Date</th>
+                <th>Animal Name</th>
+                <th>Animal ID</th>
+                <th>Days to First Service	</th>
+                <th>Days Open</th>
+                <th>Calving Interval</th>
+                <th>Conception Rate (%)</th>
+                <th>Services per Pregnancy</th>
+                <th>Comment</th>
+             </tr>
+
+
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let kfmetric of kfmetrics">
+              <td>{{kfmetric.date}}</td>      
+              <td>{{kfmetric.animalname}}</td>
+              <td>{{kfmetric.animalnumber}}</td> 
+              <td>{{kfmetric.dfservice}}</td>
+              <td>{{kfmetric.dopen}}</td>
+              <td>{{kfmetric.calvingInterval}}</td>   
+              <td>{{kfmetric.conceptionrate}}</td>    
+              <td>{{kfmetric.serviceperpreg}}</td>        
+              <td>{{kfmetric.comment}}</td>   
+                       
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/admin/addcourse']" (click)="requestCourse()">requestCourse</button>
+                    </td> -->
+                </tr>
+
+
+            </tbody>
+
+
+         </table>
+
+     </div>
+
+</div>
+
